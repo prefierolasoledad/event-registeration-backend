@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: MONGO_URI
+        sync: false  # Set to true if you want it pulled from Git
