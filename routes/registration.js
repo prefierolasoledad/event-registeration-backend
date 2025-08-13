@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
             text: `Dear Participant,
 
 Thank you for registering! 🎉
-Your spot is confirmed for the Speaker Session & Orientation organized by the Intel oneAPI Students Club (IoSC).
+Your spot is confirmed for the Speaker Session & Orientation organized by the IoSC.
 
 Event Details:
 📅 Date: 28th August
