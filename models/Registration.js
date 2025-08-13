@@ -5,10 +5,8 @@ const registrationSchema = new mongoose.Schema({
     email: String,
     phone: String,
     college: String,
-    yearBranch: String,
-    event: String,
-    teamName: String,
-    teamMembers: String,
+    year: String,
+    branch: String,
     github: String,
     linkedin: String,
     // resumeUrl: String, // Local path or cloud URL
