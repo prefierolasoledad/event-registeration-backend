@@ -44,7 +44,7 @@ Team IoSC`,
             html: `
                 <p>Dear Participant,</p>
                 <p>Thank you for registering! 🎉<br>
-                Your spot is confirmed for <b>Dock-Up<b>, the Speaker Session & Orientation organized by the  <b>IoSC</b>.</p>
+                Your spot is confirmed for <b>Dock-Up</b>, the Speaker Session & Orientation organized by the  <b>IoSC</b>.</p>
                 <h3>Event Details:</h3>
                 <ul>
                     <li>📅 Date: <b>28th August</b></li>
