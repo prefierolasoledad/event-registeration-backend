@@ -1,6 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const Registration = require('../models/Registration');
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.MAIL_USER, // your Gmail address
+        pass: process.env.MAIL_PASS  // your Gmail App Password
+    }
+});
 
 // POST /register
 router.post('/', async (req, res) => {
