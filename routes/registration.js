@@ -22,11 +22,11 @@ router.post('/', async (req, res) => {
         const mailOptions = {
             from: process.env.MAIL_USER,
             to: savedDoc.email,
-            subject: ' Invitation: Speaker Session & Orientation – IoSC',
+            subject: '  Registration Confirmed – Dock-Up: Speaker Session & Orientation (IoSC)',
             text: `Dear Participant,
 
 Thank you for registering! 🎉
-Your spot is confirmed for the Speaker Session & Orientation organized by the IoSC.
+Your spot is confirmed for Dock-Up, the Speaker Session & Orientation organized by the IoSC.
 
 Event Details:
 📅 Date: 28th August
@@ -44,7 +44,7 @@ Team IoSC`,
             html: `
                 <p>Dear Participant,</p>
                 <p>Thank you for registering! 🎉<br>
-                Your spot is confirmed for the Speaker Session & Orientation organized by the <b>IoSC</b>.</p>
+                Your spot is confirmed for <b>Dock-Up<b>, the Speaker Session & Orientation organized by the  <b>IoSC</b>.</p>
                 <h3>Event Details:</h3>
                 <ul>
                     <li>📅 Date: <b>28th August</b></li>
