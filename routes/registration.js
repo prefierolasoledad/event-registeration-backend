@@ -8,8 +8,20 @@ router.post('/', async (req, res) => {
         const data = req.body;
 
         const newEntry = new Registration(data);
-        await newEntry.save();
+        const savedDoc = await newEntry.save();
 
+        const mailOptions = {
+            from: process.env.MAIL_USER,
+            to: savedDoc.email,
+            subject: 'Event Registration Successful',
+            text: `You have successfully registered!\nYour Registration ID is: ${savedDoc._id}`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error('Error sending email:', error);
+            }
+        });
         res.status(201).json({ message: 'Registration successful' });
     } catch (error) {
         console.error(error);
