@@ -47,7 +47,7 @@ Team IoSC`,
                 Your spot is confirmed for <b>Dock-Up</b>, the Speaker Session & Orientation organized by the  <b>IoSC</b>.</p>
                 <h3>Event Details:</h3>
                 <ul>
-                    <li>📅 Date: <b>28th August</b></li>
+                    <li>📅 Date: <b>29th August</b></li>
                     <li>🕛 Time: <b>3–5 PM</b></li>
                     <li>📍 Venue: <b>To be announced</b></li>
                 </ul>
