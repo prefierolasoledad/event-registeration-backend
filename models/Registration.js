@@ -7,6 +7,7 @@ const registrationSchema = new mongoose.Schema({
     college: String,
     year: String,
     branch: String,
+    team: String,
     github: String,
     linkedin: String,
     // resumeUrl: String, // Local path or cloud URL
