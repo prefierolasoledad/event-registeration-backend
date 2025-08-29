@@ -17,9 +17,7 @@ router.post('/', async (req, res) => {
         const data = req.body;
 
         const newEntry = new Registration(data);
-        
-        
-//         const savedDoc = await newEntry.save();
+        const savedDoc = await newEntry.save();
 
 //         const mailOptions = {
 //             from: process.env.MAIL_USER,
