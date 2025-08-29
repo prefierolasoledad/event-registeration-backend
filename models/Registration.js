@@ -13,4 +13,4 @@ const registrationSchema = new mongoose.Schema({
     // resumeUrl: String, // Local path or cloud URL
 }, { timestamps: true });
 
-module.exports = mongoose.model('Registration', registrationSchema);
+module.exports = mongoose.model('MentorshipRegistration', registrationSchema);
