@@ -16,8 +16,14 @@ router.post('/', async (req, res) => {
     try {
         const data = req.body;
 
-        const newEntry = new Registration(data);
-        const savedDoc = await newEntry.save();
+        const existingUser = await Registration.findOne({ email: data.email });
+
+        if (!existingUser) {
+            const newEntry = new Registration(data);
+            const savedDoc = await newEntry.save();
+        }
+
+        // 2. If user does not exist, proceed with registration
 
 //         const mailOptions = {
 //             from: process.env.MAIL_USER,
