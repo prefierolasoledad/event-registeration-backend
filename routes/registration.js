@@ -38,7 +38,8 @@ Team IoSC`;
                 accept: 'application/json',
                 'content-type': 'application/json',
                 'api-key': process.env.API_KEY
-            }
+            },
+            timeout: 15000
         }
     );
 }
@@ -70,8 +71,14 @@ router.post('/', async (req, res) => {
         }
 
         let emailSent = true;
+        let brevoMessageId = null;
         try {
-            await sendBrevoEmail(data.email);
+            const brevoResponse = await sendBrevoEmail(data.email);
+            brevoMessageId = brevoResponse?.data?.messageId || null;
+            console.log('Brevo send success:', {
+                email: data.email,
+                messageId: brevoMessageId
+            });
         } catch (emailError) {
             emailSent = false;
             const brevoErr = emailError?.response?.data || emailError.message;
@@ -83,7 +90,8 @@ router.post('/', async (req, res) => {
                 ? (emailSent ? 'Registration successful, email sent' : 'Registration successful, email failed')
                 : (emailSent ? 'User already exists, email sent' : 'User already exists, email failed'),
             emailSent,
-            isNewUser
+            isNewUser,
+            brevoMessageId
         });
     } catch (error) {
         const apiError = error?.response?.data || error.message;
