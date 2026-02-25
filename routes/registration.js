@@ -4,8 +4,8 @@ const axios = require('axios');
 const Registration = require('../models/Registration');
 
 const BREVO_API_URL = 'https://api.brevo.com/v3/smtp/email';
-const BREVO_SENDER_NAME = process.env.BREVO_SENDER_NAME || 'Mayank Bisht';
-const BREVO_SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL || 'mayankbisht1107@gmail.com';
+const BREVO_SENDER_NAME = process.env.BREVO_SENDER_NAME || '';
+const BREVO_SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL || '';
 
 async function sendBrevoEmail(toEmail) {
     const subject = 'Confirmation of Registration - AI Simplified';
