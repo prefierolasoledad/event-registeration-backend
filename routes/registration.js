@@ -7,13 +7,13 @@ const BREVO_API_URL = 'https://api.brevo.com/v3/smtp/email';
 const BREVO_SENDER_NAME = process.env.BREVO_SENDER_NAME || 'IoSC-EDC';
 const BREVO_SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL || 'iosc.edc@gmail.com';
 
-async function sendBrevoEmail(toEmail) {
-    const subject = 'Confirmation of Registration - AI Simplified';
-    const textContent = `Dear Participant,
+async function sendBrevoEmail(toEmail, name) {
+    const subject = 'Confirmation of Registration - IoSC EDC x CampusX';
+    const textContent = `Dear ${name},
 
-Thank you for registering for our upcoming online workshop: AI Simplified. We are pleased to confirm your participation and are excited to have you join us.
+Thank you for registering for our upcoming online workshop: IoSC EDC x CampusX. We are pleased to confirm your participation and are excited to have you join us.
 
-The workshop will take place on 28th FEBRUARY 2026 at 5PM. The session will be streamed live on the official YouTube channel AI with Hassan (https://www.youtube.com/@AI.with.Hassan), ensuring easy access and a seamless viewing experience for all participants. The streaming link and any additional joining details will be shared with you prior to the event.
+The workshop will take place on 4th April 2026 at 5PM. The session will be conducted via Google Meet, and the joining link will be shared with you prior to the event.
 
 We have curated an engaging and insightful session, and we look forward to your active participation. Should you have any questions in the meantime, please feel free to reach out.
 
@@ -73,7 +73,7 @@ router.post('/', async (req, res) => {
         let emailSent = true;
         let brevoMessageId = null;
         try {
-            const brevoResponse = await sendBrevoEmail(data.email);
+            const brevoResponse = await sendBrevoEmail(data.email, data.fullName);
             brevoMessageId = brevoResponse?.data?.messageId || null;
             console.log('Brevo send success:', {
                 email: data.email,
