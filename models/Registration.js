@@ -10,6 +10,7 @@ const registrationSchema = new mongoose.Schema({
     team: String,
     github: String,
     linkedin: String,
+    interest: String,
     // resumeUrl: String, // Local path or cloud URL
 }, { timestamps: true });
 
